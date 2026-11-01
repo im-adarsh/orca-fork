@@ -1407,22 +1407,12 @@ html.native-shell .app-layout {
   box-shadow: 0 0 0 1px color-mix(in oklab, var(--worktree-sidebar-ring) 30%, transparent);
 }
 
-/* Why: the brighter border carries the selected state; a translucent wash keeps
-   card text legible instead of lifting the surface toward the foreground color. */
+/* Current workspace follows the theme selection fill, including custom sidebar appearance. */
 [data-worktree-card-surface][data-worktree-card-active='primary'] {
-  border-color: color-mix(in srgb, var(--worktree-sidebar-border) 40%, transparent);
-  background: color-mix(in srgb, var(--worktree-sidebar-foreground) 8%, transparent);
+  border-color: var(--worktree-sidebar-ring);
+  background: var(--worktree-sidebar-accent);
+  color: var(--worktree-sidebar-accent-foreground);
   box-shadow: 0 1px 2px color-mix(in srgb, var(--worktree-sidebar-foreground) 4%, transparent);
-}
-
-.dark [data-worktree-card-surface][data-worktree-card-active='primary'] {
-  border-color: color-mix(
-    in srgb,
-    var(--worktree-sidebar-foreground) 18%,
-    var(--worktree-sidebar-border)
-  );
-  background: color-mix(in srgb, var(--worktree-sidebar-foreground) 10%, transparent);
-  box-shadow: 0 1px 2px color-mix(in srgb, var(--worktree-sidebar-foreground) 3%, transparent);
 }
 
 [data-worktree-card-surface][data-worktree-card-active='secondary'] {
